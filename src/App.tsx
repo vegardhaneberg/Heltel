@@ -59,12 +59,15 @@ function App() {
               nettside laget av Helenes fanskare. Her samler vi alt gullet denne
               livlige jenta produserer.
             </p>
-            <div className="flex flex-wrap gap-4 justify-evenly">
+
+            {/* Socials for desktop/tablet */}
+            <div className="hidden md:flex flex-wrap gap-4 justify-evenly">
               <a
                 href="https://www.instagram.com/heltel/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/20 backdrop-blur-sm rounded-xl p-4 shadow-lg flex-1 min-w-[140px] max-w-[140px] flex items-center justify-center transform hover:scale-105 transition-transform hover:bg-white/30"
+                className="bg-white/20 backdrop-blur-sm rounded-xl p-4 shadow-lg min-w-[140px] max-w-[140px] flex items-center justify-center transform hover:scale-105 transition-transform hover:bg-white/30"
+                aria-label="Instagram"
               >
                 <Instagram className="w-8 h-8 text-pink-600 opacity-80 hover:opacity-100 transition-opacity" />
               </a>
@@ -72,11 +75,34 @@ function App() {
                 href="https://www.facebook.com/groups/1355474312821477"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/20 backdrop-blur-sm rounded-xl p-4 shadow-lg flex-1 min-w-[140px] max-w-[140px] flex items-center justify-center transform hover:scale-105 transition-transform hover:bg-white/30"
+                className="bg-white/20 backdrop-blur-sm rounded-xl p-4 shadow-lg min-w-[140px] max-w-[140px] flex items-center justify-center transform hover:scale-105 transition-transform hover:bg-white/30"
+                aria-label="Facebook"
               >
                 <Facebook className="w-8 h-8 text-blue-600 opacity-80 hover:opacity-100 transition-opacity" />
               </a>
             </div>
+          </div>
+
+          {/* Socials for mobile */}
+          <div className="order-3 md:hidden flex flex-wrap gap-4 justify-evenly">
+            <a
+              href="https://www.instagram.com/heltel/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white/20 backdrop-blur-sm rounded-xl p-4 shadow-lg min-w-[140px] max-w-[140px] flex items-center justify-center transform hover:scale-105 transition-transform hover:bg-white/30"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-8 h-8 text-pink-600 opacity-80 hover:opacity-100 transition-opacity" />
+            </a>
+            <a
+              href="https://www.facebook.com/groups/1355474312821477"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white/20 backdrop-blur-sm rounded-xl p-4 shadow-lg min-w-[140px] max-w-[140px] flex items-center justify-center transform hover:scale-105 transition-transform hover:bg-white/30"
+              aria-label="Facebook"
+            >
+              <Facebook className="w-8 h-8 text-blue-600 opacity-80 hover:opacity-100 transition-opacity" />
+            </a>
           </div>
         </div>
       </div>
