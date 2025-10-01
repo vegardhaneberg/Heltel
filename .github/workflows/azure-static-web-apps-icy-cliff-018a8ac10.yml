@@ -1,4 +1,4 @@
-name: Azure Static Web Apps CI/CD
+name: Heltel.no CI/CD
 
 on:
   push:
