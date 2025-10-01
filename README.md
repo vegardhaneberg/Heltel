@@ -2,7 +2,7 @@
 
 A web site containing Helene Maria Tellefsen's wonderful work. Check out https://heltel.no 🙌🏼
 
-Written in React, styled with Tailwind and built with Vite 🤝🏼
+Written in React, styled with Tailwind and built using Vite 🤝🏼
 
 ## Local Development 💻
 
