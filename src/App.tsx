@@ -16,10 +16,6 @@ function App() {
                 Helene Maria Tellefsen
               </h1>
             </div>
-            {/* <div className="flex items-center space-x-2">
-              <Trophy className="w-5 h-5 text-yellow-500 animate-pulse" />
-              <Medal className="w-5 h-5 text-yellow-500 animate-pulse" />
-            </div> */}
           </div>
         </div>
       </header>
@@ -95,31 +91,62 @@ function App() {
 
         <div className="space-y-6">
           {WorkTimeLine.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white/25 backdrop-blur-sm rounded-2xl shadow-xl p-6 sm:p-8 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl"
-            >
-              <div className="flex flex-col items-center sm:flex-row sm:items-center gap-4 sm:gap-6">
-                <div
-                  className={`${item.color} rounded-xl p-4 sm:p-6 shadow-lg flex-shrink-0 self-center`}
-                >
-                  <div className="text-2xl sm:text-3xl font-black text-white">
-                    {item.year}
-                  </div>
-                  <div className="text-xs sm:text-sm text-white/80 font-medium">
-                    {item.type}
+            <div key={index}>
+              {/* Mobile version: whole card is a link */}
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block sm:hidden"
+              >
+                <div className="bg-white/25 backdrop-blur-sm rounded-2xl shadow-xl p-6 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl">
+                  <div className="flex flex-col items-center gap-4">
+                    <div
+                      className={`${item.color} rounded-xl p-4 sm:p-6 shadow-lg flex-shrink-0 self-center flex flex-col items-center`}
+                    >
+                      <div className="text-2xl font-black text-white">
+                        {item.year}
+                      </div>
+                      <div className="text-xs text-white/80 font-medium">
+                        {item.type}
+                      </div>
+                    </div>
+                    <div className="w-full text-center">
+                      <h4 className="text-xl font-bold text-gray-800 mb-2">
+                        {item.title}
+                      </h4>
+                      <p className="text-gray-800 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div className="w-full text-center sm:text-left sm:flex-1">
-                  <h4 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2 flex items-center gap-2 justify-center sm:justify-start">
-                    {item.title}
-                    <a href={item.link} target="_blank">
-                      <ExternalLink className="w-4 h-4 text-gray-400 hover:text-purple-600 cursor-pointer" />
-                    </a>
-                  </h4>
-                  <p className="text-gray-800 leading-relaxed">
-                    {item.description}
-                  </p>
+              </a>
+
+              {/* Desktop version: original card with icon */}
+              <div className="hidden sm:block bg-white/25 backdrop-blur-sm rounded-2xl shadow-xl p-6 sm:p-8 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl">
+                <div className="flex flex-col items-center sm:flex-row sm:items-center gap-4 sm:gap-6">
+                  <div
+                    className={`${item.color} rounded-xl p-4 sm:p-6 shadow-lg flex-shrink-0 self-center flex flex-col items-center`}
+                  >
+                    <div className="text-2xl sm:text-3xl font-black text-white">
+                      {item.year}
+                    </div>
+                    <div className="text-xs sm:text-sm text-white/80 font-medium">
+                      {item.type}
+                    </div>
+                  </div>
+                  <div className="w-full text-center sm:text-left sm:flex-1">
+                    <h4 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2 flex items-center gap-2 justify-center sm:justify-start">
+                      {item.title}
+                      <a href={item.link} target="_blank">
+                        <ExternalLink className="w-4 h-4 text-gray-400 hover:text-purple-600 cursor-pointer" />
+                      </a>
+                    </h4>
+                    <p className="text-gray-800 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
