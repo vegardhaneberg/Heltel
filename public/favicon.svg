@@ -1,0 +1,32 @@
+<!-- star-favicon.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Shining yellow star">
+  <defs>
+    <!-- soft glow behind the star -->
+    <radialGradient id="glow" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#FFF7B3"/>
+      <stop offset="45%" stop-color="#FFE34D"/>
+      <stop offset="100%" stop-color="#FFB300" stop-opacity="0.25"/>
+    </radialGradient>
+    <!-- subtle depth across the star face -->
+    <linearGradient id="starFill" x1="50%" x2="50%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF6A7"/>
+      <stop offset="55%" stop-color="#FFD426"/>
+      <stop offset="100%" stop-color="#FFB300"/>
+    </linearGradient>
+    <filter id="glowBlur">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <!-- background glow -->
+  <circle cx="32" cy="32" r="18" fill="url(#glow)" filter="url(#glowBlur)" opacity="0.9"/>
+
+  <!-- star -->
+  <polygon
+    points="32,12 36.7,25.53 51.02,25.82 39.61,34.47 43.76,48.18 32,40 20.24,48.18 24.39,34.47 12.98,25.82 27.3,25.53"
+    fill="url(#starFill)"
+    stroke="#F7B500"
+    stroke-width="1"
+    stroke-linejoin="round"
+  />
+</svg>
