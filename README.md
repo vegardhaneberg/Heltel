@@ -21,3 +21,5 @@ npm run dev
 ## CI/CD 🚀
 
 The web site is hosted on a Static Web App in Azure. Build and deploy with GitHub Actions.
+
+[![.NET CI](https://github.com/vegardhaneberg/Heltel/actions/workflows/azure-static-web-apps-icy-cliff-018a8ac10.yml/badge.svg)](https://github.com/vegardhaneberg/Heltel/actions/workflows/azure-static-web-apps-icy-cliff-018a8ac10.yml)
