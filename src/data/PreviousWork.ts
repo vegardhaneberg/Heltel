@@ -39,7 +39,7 @@ export const WorkTimeLine: Work[] = [
     year: 2022,
     title: "Enten/Eller",
     description:
-      "Ville du enten tilbringe 6mnd på tur med Lars Monsen til Canada, eller sykle fra Nordkapp til Sør-Kapp med Dag Otto Lauritzen og Sophie - Elise? Dette er bare et av mange dilemmaer vi tar opp dette radioprogrammet. En ting er i hvert fall sikkert, du trenger mest sannsynlig aldri å ta hensyn til noe av det vi snakker om, men vi tar det på fulle alvor selvom. Utfordringer, spalter og snikk snakk kan også påregnes.",
+      "Ville du enten tilbrakt 6 mnd på tur med Lars Monsen til Canada, eller syklet fra Nordkapp til Sør-Kapp med Dag Otto Lauritzen og Sophie - Elise? Dette er bare ett av mange dilemmaer vi tar opp dette radioprogrammet. En ting er i hvert fall sikkert, du trenger mest sannsynlig aldri å ta hensyn til noe av det vi snakker om, men vi tar det på fult alvor likevel.",
     type: "Radio",
     link: "https://open.spotify.com/show/3zvH9gBm9JbRtAsZvYrgaY",
     color: "bg-gradient-to-br from-green-400 to-emerald-500",
