@@ -48,13 +48,15 @@ export const WorkTimeLine: Work[] = [
       {
         date: "24. Nov 2023",
         title: "Knaggen: Årets radioprogram",
-        description: "Helene stakk av med seieren",
+        description:
+          "Knaggen er en pris som gjennomføres hvert år blant studentene på Høgskulen i Volda. Her kåres en rekke priser blant arbeidet studentene har gjennomført det foregående året og Helene stakk av med den gjeveste av dem alle, nemlig prets radioprogram!",
         link: "https://youtube.com",
       },
       {
         date: "8. April 2023",
-        title: "Studentpris: Årets Spalte",
-        description: "Helene stakk av med seieren",
+        title: "Knaggen: Årets Spalte",
+        description:
+          "Knaggen er en pris som gjennomføres hvert år blant studentene på Høgskulen i Volda. Her kåres en rekke priser blant arbeidet studentene har gjennomført det foregående året og Helene sin spalte 'Tempen på bygda' ble kåret til årets beste spalte!!",
         link: "https://youtube.com",
       },
     ],
@@ -72,7 +74,7 @@ export const WorkTimeLine: Work[] = [
         date: "2. Des 2022",
         title: "Knaggen: Årets spalte",
         description:
-          "Gjengen i Enten/Eller stakk av med premien for årets spalte",
+          "Gjengen i Enten/Eller stakk av med seieren i kategorien 'Årets spalte'. Den herlige spalten 'KJØØØH' vant klinkende klart🤝🏼",
         link: "https://vg.no",
       },
     ],
