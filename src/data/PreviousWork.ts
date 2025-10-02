@@ -53,7 +53,7 @@ export const WorkTimeLine: Work[] = [
       },
       {
         date: "8. April 2023",
-        title: "Annen pris: Årets radioprogram",
+        title: "Studentpris: Årets Spalte",
         description: "Helene stakk av med seieren",
         link: "https://youtube.com",
       },
