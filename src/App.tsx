@@ -1,5 +1,6 @@
 import { Sparkles, ExternalLink, Facebook, Instagram } from "lucide-react";
 import { WorkTimeLine } from "./data/PreviousWork";
+import PrizeComponent from "./components/PrizeComponent";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
               <div className="bg-gradient-to-br from-purple-400 to-pink-500 p-3 rounded-full transform rotate-12">
                 <Sparkles className="w-4 h-4 text-white -rotate-12" />
               </div>
-              <h1 className='[font-family:"Dancing_Script",cursive] text-3xl sm:text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent'>
+              <h1 className='[font-family:"Cooper Hewitt",serif] text-3xl sm:text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent'>
                 Helene Maria Tellefsen
               </h1>
             </div>
@@ -24,7 +25,7 @@ function App() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Image */}
-          <div className="order-2 md:order-1">
+          <div className="order-2 md:order-1 p-4">
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-yellow-400 via-pink-500 to-cyan-500 rounded-3xl blur-2xl opacity-60 animate-pulse"></div>
               <div className="relative p-2 rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-300">
@@ -110,7 +111,7 @@ function App() {
       {/* Timeline Section */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         <div className="text-center mb-12">
-          <h3 className='[font-family:"Dancing_Script",cursive] text-3xl sm:text-4xl font-black text-white'>
+          <h3 className='[font-family:"Cooper Hewitt",serif] text-3xl sm:text-4xl font-black text-white'>
             Heltel sitt arbeid
           </h3>
         </div>
@@ -119,14 +120,14 @@ function App() {
           {WorkTimeLine.map((item, index) => (
             <div key={index}>
               {/* Mobile version: whole card is a link */}
-              <a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block sm:hidden"
-              >
-                <div className="bg-white/25 backdrop-blur-sm rounded-2xl shadow-xl p-6 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl">
-                  <div className="flex flex-col items-center gap-4">
+              <div className="bg-white/25 backdrop-blur-sm rounded-2xl shadow-xl p-6 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl">
+                <div className="flex flex-col items-center gap-4">
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block sm:hidden"
+                  >
                     <div
                       className={`${item.color} rounded-xl p-4 sm:p-6 shadow-lg flex-shrink-0 self-center flex flex-col items-center`}
                     >
@@ -137,6 +138,13 @@ function App() {
                         {item.type}
                       </div>
                     </div>
+                  </a>
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block sm:hidden"
+                  >
                     <div className="w-full text-center">
                       <h4 className="text-xl font-bold text-gray-800 mb-2">
                         {item.title}
@@ -145,9 +153,15 @@ function App() {
                         {item.description}
                       </p>
                     </div>
-                  </div>
+                  </a>
+                  {/* Accordion Prizes */}
+                  {item.prizes && (
+                    <div className="mt-0 sm:mt-4 self-center">
+                      <PrizeComponent prizes={item.prizes} title={item.title} />
+                    </div>
+                  )}
                 </div>
-              </a>
+              </div>
 
               {/* Desktop version: original card with icon */}
               <div className="hidden sm:block bg-white/25 backdrop-blur-sm rounded-2xl shadow-xl p-6 sm:p-8 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl">
@@ -169,11 +183,17 @@ function App() {
                         <ExternalLink className="w-4 h-4 text-gray-400 hover:text-purple-600 cursor-pointer" />
                       </a>
                     </h4>
-                    <p className="text-gray-800 leading-relaxed">
+                    <p className="text-gray-800 leading-relaxed mb-4">
                       {item.description}
                     </p>
                   </div>
                 </div>
+                {/* Accordion Prizes */}
+                {item.prizes && (
+                  <div className="mt-0 sm:mt-4">
+                    <PrizeComponent prizes={item.prizes} title={item.title} />
+                  </div>
+                )}
               </div>
             </div>
           ))}

@@ -5,6 +5,14 @@ export interface Work {
   type: string;
   link: string;
   color: string;
+  prizes: Prize[] | undefined;
+}
+
+export interface Prize {
+  date: string;
+  title: string;
+  description: string;
+  link: string;
 }
 
 export const WorkTimeLine: Work[] = [
@@ -16,6 +24,7 @@ export const WorkTimeLine: Work[] = [
     type: "TV for barn",
     link: "https://tv.nrk.no/serie/supernytt/sesong/202509/episode/MSUM02091225",
     color: "bg-gradient-to-br from-[#608a5a] to-[#df698c]",
+    prizes: undefined,
   },
   {
     year: 2025,
@@ -25,6 +34,7 @@ export const WorkTimeLine: Work[] = [
     type: "TV",
     link: "https://tv.nrk.no/serie/newton/sesong/2025/episode/DMPP21501625",
     color: "bg-gradient-to-br from-[#608a5a] to-[#df698c]",
+    prizes: undefined,
   },
   {
     year: 2024,
@@ -34,6 +44,20 @@ export const WorkTimeLine: Work[] = [
     type: "Radio",
     link: "https://open.spotify.com/show/371wEolsdbDibF50jEln7W",
     color: "bg-gradient-to-br from-[#608a5a] to-[#df698c]",
+    prizes: [
+      {
+        date: "24. Nov 2023",
+        title: "Knaggen: Årets radioprogram",
+        description: "Helene stakk av med seieren",
+        link: "https://youtube.com",
+      },
+      {
+        date: "8. April 2023",
+        title: "Annen pris: Årets radioprogram",
+        description: "Helene stakk av med seieren",
+        link: "https://youtube.com",
+      },
+    ],
   },
   {
     year: 2022,
@@ -43,5 +67,14 @@ export const WorkTimeLine: Work[] = [
     type: "Radio",
     link: "https://open.spotify.com/show/3zvH9gBm9JbRtAsZvYrgaY",
     color: "bg-gradient-to-br from-[#608a5a] to-[#df698c]",
+    prizes: [
+      {
+        date: "2. Des 2022",
+        title: "Knaggen: Årets spalte",
+        description:
+          "Gjengen i Enten/Eller stakk av med premien for årets spalte",
+        link: "https://vg.no",
+      },
+    ],
   },
 ];
