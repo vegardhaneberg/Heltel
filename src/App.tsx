@@ -120,7 +120,7 @@ function App() {
           {WorkTimeLine.map((item, index) => (
             <div key={index}>
               {/* Mobile version: whole card is a link */}
-              <div className="bg-white/25 backdrop-blur-sm rounded-2xl shadow-xl p-6 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl">
+              <div className="bg-white/25 backdrop-blur-sm rounded-2xl shadow-xl p-6 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl sm:hidden">
                 <div className="flex flex-col items-center gap-4">
                   <a
                     href={item.link}
