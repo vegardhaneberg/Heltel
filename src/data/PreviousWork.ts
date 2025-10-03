@@ -28,11 +28,21 @@ export const WorkTimeLine: Work[] = [
   },
   {
     year: 2025,
-    title: "NRK Newton",
+    title: "NRK Newton stjernebilde-challenge",
     description:
       "Stjernene på himmelen er ganske faktastiske✨✨✨ Dette formidler Helene både pedagogisk og underholdende i denne episoden av Newton. Her får deltakerne også bryne seg på en stjernebilde-challenge i eposiden hvor Helene har vært manusforfatter, produsent og medvirkende.",
     type: "TV",
     link: "https://tv.nrk.no/serie/newton/sesong/2025/episode/DMPP21501625",
+    color: "bg-gradient-to-br from-[#608a5a] to-[#df698c]",
+    prizes: undefined,
+  },
+  {
+    year: 2025,
+    title: "NRK Newton - hvem har bæsja?",
+    description:
+      "Stjernene på himmelen er ganske faktastiske✨✨✨ Dette formidler Helene både pedagogisk og underholdende i denne episoden av Newton. Her får deltakerne også bryne seg på en stjernebilde-challenge i eposiden hvor Helene har vært manusforfatter, produsent og medvirkende.",
+    type: "TV",
+    link: "https://tv.nrk.no/serie/newton/sesong/2025/episode/DMPP21501225",
     color: "bg-gradient-to-br from-[#608a5a] to-[#df698c]",
     prizes: undefined,
   },
@@ -50,14 +60,14 @@ export const WorkTimeLine: Work[] = [
         title: "Knaggen: Årets radioprogram",
         description:
           "Knaggen er en pris som gjennomføres hvert år blant studentene på Høgskulen i Volda. Her kåres en rekke priser blant arbeidet studentene har gjennomført det foregående året og Helene stakk av med den gjeveste av dem alle, nemlig prets radioprogram!",
-        link: "https://youtube.com",
+        link: "https://youtube.com", // Ikke i bruk enda
       },
       {
         date: "8. April 2023",
         title: "Knaggen: Årets Spalte",
         description:
           "Knaggen er en pris som gjennomføres hvert år blant studentene på Høgskulen i Volda. Her kåres en rekke priser blant arbeidet studentene har gjennomført det foregående året og Helene sin spalte 'Tempen på bygda' ble kåret til årets beste spalte!!",
-        link: "https://youtube.com",
+        link: "https://youtube.com", // Ikke i bruk enda
       },
     ],
   },
@@ -75,8 +85,18 @@ export const WorkTimeLine: Work[] = [
         title: "Knaggen: Årets spalte",
         description:
           "Gjengen i Enten/Eller stakk av med seieren i kategorien 'Årets spalte'. Den herlige spalten 'KJØØØH' vant klinkende klart🤝🏼",
-        link: "https://vg.no",
+        link: "https://vg.no", // Ikke i bruk enda
       },
     ],
+  },
+  {
+    year: 2022,
+    title: "Hybridarevyen",
+    description:
+      "Da Helene studrete for å bli ingeniør på NTNU i Trondheim startet hun opp linjeforeningen Hybrida sin første revy! Revyen ble fort utsolgt og var en braksuksess! Linjeforeningen har laget revy hvert år siden den gang, så Helenes ånd lever i beste velgående i bartebyen⭐️",
+    type: "Revy",
+    link: "https://www.youtube.com/watch?v=XCc7Or1DoGQ",
+    color: "bg-gradient-to-br from-[#608a5a] to-[#df698c]",
+    prizes: undefined,
   },
 ];

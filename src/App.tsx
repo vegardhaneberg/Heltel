@@ -1,6 +1,7 @@
 import { Sparkles, ExternalLink, Facebook, Instagram } from "lucide-react";
 import { WorkTimeLine } from "./data/PreviousWork";
 import PrizeComponent from "./components/PrizeComponent";
+import ScrollArrow from "./components/ScrollArrow/ScrollArrow";
 
 function App() {
   return (
@@ -14,16 +15,17 @@ function App() {
                 <Sparkles className="w-4 h-4 text-white -rotate-12" />
               </div>
               <h1 className='[font-family:"Cooper Hewitt",serif] text-3xl sm:text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent'>
-                Helene Maria Tellefsen
+                <span className="block sm:hidden">Heltel</span>
+                <span className="hidden sm:block">Helene Maria Tellefsen</span>
               </h1>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Hero Section */}
+      {/* Landing content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-2 sm:gap-8 lg:gap-12 items-center">
           {/* Image */}
           <div className="order-2 md:order-1 p-4">
             <div className="relative">
@@ -32,7 +34,7 @@ function App() {
                 <img
                   src="Heltel.JPG"
                   alt="Helene Maria Tellefsen"
-                  className="w-full h-[400px] sm:h-[500px] object-cover rounded-2xl"
+                  className="w-full h-[330px] sm:h-[400px] lg:h-[500px] object-cover rounded-2xl"
                 />
                 <div className="absolute -bottom-4 -right-4 bg-gradient-to-br from-purple-400 to-pink-400 p-4 rounded-full shadow-xl">
                   <Sparkles className="w-8 h-8 text-white" />
@@ -61,7 +63,7 @@ function App() {
               livlige jenta produserer.
             </p>
 
-            {/* Socials for desktop/tablet */}
+            {/* Instagram and Facebook on large screens */}
             <div className="hidden md:flex flex-wrap gap-4 justify-evenly">
               <a
                 href="https://www.instagram.com/heltel/"
@@ -84,7 +86,7 @@ function App() {
             </div>
           </div>
 
-          {/* Socials for mobile */}
+          {/* Instagram and Facebook on mobile */}
           <div className="order-3 md:hidden flex flex-wrap gap-4 justify-evenly">
             <a
               href="https://www.instagram.com/heltel/"
@@ -108,18 +110,33 @@ function App() {
         </div>
       </div>
 
+      {/* Scroll indicator */}
+      <ScrollArrow />
+
       {/* Timeline Section */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
-        <div className="text-center mb-12">
-          <h3 className='[font-family:"Cooper Hewitt",serif] text-3xl sm:text-4xl font-black text-white'>
-            Heltel sitt arbeid
-          </h3>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20">
+          <div className="text-center mb-12">
+            <h3 className='[font-family:"Cooper Hewitt",serif] text-3xl sm:text-4xl font-black text-white'>
+              Heltel sitt arbeid
+            </h3>
+            <div className="flex justify-center items-center">
+              <p className='[font-family:"Cooper Hewitt",serif] text-sm sm:text-xl text-white/70'>
+                Klikk på én av boksene
+              </p>
+              <img
+                src="/arrow.svg"
+                alt="arrow"
+                className="ml-1 h-6 w-6 transform rotate-180 pb-2"
+              />
+            </div>
+          </div>
         </div>
 
         <div className="space-y-6">
           {WorkTimeLine.map((item, index) => (
             <div key={index}>
-              {/* Mobile version: whole card is a link */}
+              {/* Mobile version */}
               <div className="bg-white/25 backdrop-blur-sm rounded-2xl shadow-xl p-6 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl sm:hidden">
                 <div className="flex flex-col items-center gap-4">
                   <a
@@ -154,7 +171,7 @@ function App() {
                       </p>
                     </div>
                   </a>
-                  {/* Accordion Prizes */}
+                  {/* Prizes */}
                   {item.prizes && (
                     <div className="mt-0 sm:mt-4 self-center">
                       <PrizeComponent prizes={item.prizes} title={item.title} />
@@ -163,7 +180,7 @@ function App() {
                 </div>
               </div>
 
-              {/* Desktop version: original card with icon */}
+              {/* Desktop version */}
               <div className="hidden sm:block bg-white/25 backdrop-blur-sm rounded-2xl shadow-xl p-6 sm:p-8 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl">
                 <div className="flex flex-col items-center sm:flex-row sm:items-center gap-4 sm:gap-6">
                   <div
@@ -188,7 +205,7 @@ function App() {
                     </p>
                   </div>
                 </div>
-                {/* Accordion Prizes */}
+                {/* Prizes */}
                 {item.prizes && (
                   <div className="mt-0 sm:mt-4">
                     <PrizeComponent prizes={item.prizes} title={item.title} />
