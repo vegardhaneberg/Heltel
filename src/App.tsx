@@ -122,7 +122,7 @@ function App() {
             </h3>
             <div className="flex justify-center items-center">
               <p className='[font-family:"Cooper Hewitt",serif] text-sm sm:text-xl text-white/70'>
-                Klikk på én av boksene
+                Klikk på boksene under
               </p>
               <img
                 src="/arrow.svg"

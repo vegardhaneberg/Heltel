@@ -30,7 +30,7 @@ export const WorkTimeLine: Work[] = [
     year: 2025,
     title: "NRK Newton stjernebilde-challenge",
     description:
-      "Stjernene på himmelen er ganske faktastiske✨✨✨ Dette formidler Helene både pedagogisk og underholdende i denne episoden av Newton. Her får deltakerne også bryne seg på en stjernebilde-challenge i eposiden hvor Helene har vært manusforfatter, produsent og medvirkende.",
+      "Stjernene på himmelen er ganske faktastiske✨ Dette formidler Helene både pedagogisk og underholdende i denne episoden av Newton. Her får deltakerne også bryne seg på en stjernebilde-challenge i eposiden hvor Helene har vært manusforfatter, produsent og medvirkende.",
     type: "TV",
     link: "https://tv.nrk.no/serie/newton/sesong/2025/episode/DMPP21501625",
     color: "bg-gradient-to-br from-[#608a5a] to-[#df698c]",
@@ -40,7 +40,7 @@ export const WorkTimeLine: Work[] = [
     year: 2025,
     title: "NRK Newton - hvem har bæsja?",
     description:
-      "Stjernene på himmelen er ganske faktastiske✨✨✨ Dette formidler Helene både pedagogisk og underholdende i denne episoden av Newton. Her får deltakerne også bryne seg på en stjernebilde-challenge i eposiden hvor Helene har vært manusforfatter, produsent og medvirkende.",
+      "I denne artige Newton-episoden medvirker Helene som bæsje-ekspert når hun og programleder Viljar utforsker ulike dyr sin avføring! Liten advarsel: ikke se mens du spiser middag, men se hvis du vil ha en god latter 😈",
     type: "TV",
     link: "https://tv.nrk.no/serie/newton/sesong/2025/episode/DMPP21501225",
     color: "bg-gradient-to-br from-[#608a5a] to-[#df698c]",

@@ -44,7 +44,7 @@ const ScrollArrow: React.FC = () => {
             "arrow-anim",
           ].join(" ")}
         >
-          <span className="absolute inset-0 rounded-full bg-white/20 blur-md -z-10" />
+          <span className="absolute inset-0 rounded-full bg-white/50 blur-md -z-10" />
           <ChevronDown className="h-7 w-7 text-white" />
         </button>
       </div>
