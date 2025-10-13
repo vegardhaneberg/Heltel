@@ -13,7 +13,7 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPrize, setSelectedPrize] = useState<Prize | null>(null);
 
-  // ESC close
+  // Close the modal when ESC click
   useEffect(() => {
     if (!isModalOpen) return;
     const onKey = (e: KeyboardEvent) => {
@@ -25,7 +25,7 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
 
   const panelRef = useRef<HTMLDivElement | null>(null);
 
-  // Click outside the modal to close it
+  // Close the modal when cliked outside
   useEffect(() => {
     if (!isModalOpen) return;
     const onClick = (e: MouseEvent) => {
@@ -35,6 +35,19 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
     };
     document.addEventListener("mousedown", onClick);
     return () => document.removeEventListener("mousedown", onClick);
+  }, [isModalOpen]);
+
+  // Prevent scrolling when the modal is open
+  useEffect(() => {
+    if (!isModalOpen) return;
+    const { style } = document.documentElement;
+    const prev = { overflow: style.overflow, touchAction: style.touchAction };
+    style.overflow = "hidden";
+    style.touchAction = "none";
+    return () => {
+      style.overflow = prev.overflow;
+      style.touchAction = prev.touchAction;
+    };
   }, [isModalOpen]);
 
   const openModalForPrize = (prize: Prize) => {
@@ -105,7 +118,15 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
       {isModalOpen &&
         createPortal(
           <div
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+            className="
+        fixed left-0 top-0 z-[100]
+        w-screen h-dvh
+        p-4
+        bg-black/50 backdrop-blur-sm
+        pb-[env(safe-area-inset-bottom)]
+        pt-[env(safe-area-inset-top)]
+        flex items-center justify-center
+      "
             aria-modal="true"
             role="dialog"
             aria-labelledby="modal-title"
