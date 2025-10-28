@@ -122,12 +122,11 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
         createPortal(
           <div
             className="
-        fixed inset-0 z-[100]
-        min-h-[100vh] [min-height:100lvh]
-        bg-black/50 backdrop-blur-sm
-        flex items-center justify-center
-        touch-none
-      "
+                    fixed inset-0 z-[100]
+                    h-[100dvh] w-[100vw]
+                    bg-black/50 backdrop-blur-sm
+                    flex items-center justify-center
+                    touch-none"
             aria-modal="true"
             role="dialog"
             aria-labelledby="modal-title"
