@@ -5,7 +5,6 @@ import ScrollArrow from "./components/ScrollArrow/ScrollArrow";
 
 function App() {
   return (
-    // <div className="min-h-screen bg-gradient-to-br from-purple-400 via-pink-400 to-yellow-300">
     <div className="min-h-[100dvh] bg-gradient-to-br from-purple-400 via-pink-400 to-yellow-300">
       {/* Header */}
       <header className="bg-white/90 backdrop-blur-sm shadow-lg sticky top-0 z-50">

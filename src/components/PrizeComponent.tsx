@@ -43,12 +43,25 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
 
     const scrollY = window.scrollY;
     const body = document.body;
+    const root = document.documentElement;
 
-    // lock without fixing the body — avoids iOS painting bug
+    // lock scroll
     body.style.overflow = "hidden";
+
+    // ⚠️ Key part: tint the root bg so the area behind iOS toolbar matches the modal backdrop
+    const prevBodyBg = body.style.backgroundColor;
+    const prevRootBg = root.style.backgroundColor;
+
+    // Use a solid/semi alpha — both work; alpha looks nicer
+    const dim = "rgba(0,0,0,0.5)";
+    body.style.backgroundColor = dim;
+    root.style.backgroundColor = dim;
 
     return () => {
       body.style.overflow = "";
+      // restore background colors
+      body.style.backgroundColor = prevBodyBg;
+      root.style.backgroundColor = prevRootBg;
       window.scrollTo(0, scrollY);
     };
   }, [isModalOpen]);
