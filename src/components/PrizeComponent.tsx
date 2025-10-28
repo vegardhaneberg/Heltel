@@ -198,6 +198,7 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
         min-h-[100vh] [min-height:100lvh]
         bg-black/50 backdrop-blur-sm
         flex items-center justify-center
+        touch-none
       "
             aria-modal="true"
             role="dialog"
