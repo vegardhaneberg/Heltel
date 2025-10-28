@@ -40,13 +40,25 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
   // Prevent scrolling when the modal is open
   useEffect(() => {
     if (!isModalOpen) return;
-    const { style } = document.documentElement;
-    const prev = { overflow: style.overflow, touchAction: style.touchAction };
-    style.overflow = "hidden";
-    style.touchAction = "none";
+
+    const scrollY = window.scrollY;
+    const body = document.body;
+
+    // Lock the body without touching <html>
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.width = "100%";
+    body.style.overflow = "hidden";
+
+    // Optional: prevent background touches only on the backdrop via CSS (see below)
+
     return () => {
-      style.overflow = prev.overflow;
-      style.touchAction = prev.touchAction;
+      // Restore
+      body.style.position = "";
+      body.style.top = "";
+      body.style.width = "";
+      body.style.overflow = "";
+      window.scrollTo(0, scrollY);
     };
   }, [isModalOpen]);
 
@@ -183,7 +195,7 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
           <div
             className="
         fixed inset-0 z-[100]
-        min-h-[100vh] [min-height:100lvh]  /* cover under iOS toolbar */
+        min-h-[100vh] [min-height:100lvh]
         bg-black/50 backdrop-blur-sm
         flex items-center justify-center
       "
