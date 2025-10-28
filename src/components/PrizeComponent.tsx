@@ -48,18 +48,30 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
     // lock scroll
     body.style.overflow = "hidden";
 
-    // ⚠️ Key part: tint the root bg so the area behind iOS toolbar matches the modal backdrop
+    // --- NEW: match Safari toolbar to backdrop ---
+    const metaTheme =
+      document.querySelector<HTMLMetaElement>('meta[name="theme-color"]') ??
+      (() => {
+        const m = document.createElement("meta");
+        m.setAttribute("name", "theme-color");
+        document.head.appendChild(m);
+        return m;
+      })();
+
+    const prevTheme = metaTheme.getAttribute("content");
+    // iOS Safari ignores alpha here; pick a solid close to your overlay.
+    // Your backdrop is bg-black/50 => use #000000 for a convincing match.
+    metaTheme.setAttribute("content", "#000000");
+
+    // Optional: also darken html/body so the bounce/overscroll looks right
     const prevBodyBg = body.style.backgroundColor;
     const prevRootBg = root.style.backgroundColor;
-
-    // Use a solid/semi alpha — both work; alpha looks nicer
-    const dim = "rgba(0,0,0,0.5)";
-    body.style.backgroundColor = dim;
-    root.style.backgroundColor = dim;
+    body.style.backgroundColor = "black";
+    root.style.backgroundColor = "black";
 
     return () => {
       body.style.overflow = "";
-      // restore background colors
+      metaTheme.setAttribute("content", prevTheme ?? "#ffffff");
       body.style.backgroundColor = prevBodyBg;
       root.style.backgroundColor = prevRootBg;
       window.scrollTo(0, scrollY);
