@@ -44,19 +44,10 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
     const scrollY = window.scrollY;
     const body = document.body;
 
-    // Lock the body without touching <html>
-    body.style.position = "fixed";
-    body.style.top = `-${scrollY}px`;
-    body.style.width = "100%";
+    // lock without fixing the body — avoids iOS painting bug
     body.style.overflow = "hidden";
 
-    // Optional: prevent background touches only on the backdrop via CSS (see below)
-
     return () => {
-      // Restore
-      body.style.position = "";
-      body.style.top = "";
-      body.style.width = "";
       body.style.overflow = "";
       window.scrollTo(0, scrollY);
     };
@@ -127,69 +118,6 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
       </div>
 
       {/* Modal Portal */}
-      {/* {isModalOpen &&
-        createPortal(
-          <div
-            className="
-        fixed inset-0 z-[100]
-        min-h-[100vh] [min-height:100lvh]
-        bg-black/50 backdrop-blur-sm
-        flex items-center justify-center
-      "
-            aria-modal="true"
-            role="dialog"
-            aria-labelledby="modal-title"
-            aria-describedby="modal-description"
-          >
-            <div
-              ref={panelRef}
-              className="relative w-full max-w-lg rounded-2xl bg-white shadow-2xl"
-            >
-              <div className="p-6 sm:p-8">
-                <div className="flex items-start justify-between gap-6">
-                  <div className="flex items-center gap-3">
-                    <div className="bg-gradient-to-br from-purple-400 to-pink-400 p-2 rounded-full shadow">
-                      <Trophy className="w-5 h-5 text-white" />
-                    </div>
-                    <h3
-                      id="modal-title"
-                      className='[font-family:"Cooper Hewitt",serif] text-2xl font-bold text-gray-900'
-                    >
-                      {selectedPrize?.title ?? "Prisdetaljer"}
-                    </h3>
-                  </div>
-                  <button
-                    onClick={() => setIsModalOpen(false)}
-                    className="rounded-full p-2 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500/60"
-                    aria-label="Lukk"
-                    autoFocus
-                  >
-                    <X className="w-5 h-5 text-gray-600" />
-                  </button>
-                </div>
-
-                <p
-                  id="modal-description"
-                  className="mt-4 text-gray-700 leading-relaxed"
-                >
-                  {selectedPrize?.description ??
-                    "Oi her skjedde det en feil. Dette skal være en beskrivelse av prisen Helene vant"}
-                </p>
-
-                <div className="mt-6 flex justify-end">
-                  <button
-                    onClick={() => setIsModalOpen(false)}
-                    className="inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-400 to-pink-400 px-4 py-2 text-sm font-semibold text-white shadow hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-purple-500/60"
-                  >
-                    Lukk
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>,
-          document.body
-        )} */}
-
       {isModalOpen &&
         createPortal(
           <div
