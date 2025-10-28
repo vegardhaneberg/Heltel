@@ -119,14 +119,20 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
         createPortal(
           <div
             className="
-        fixed left-0 top-0 z-[100]
-        w-screen h-dvh
-        p-4
+        fixed inset-0 z-[100]
+        min-h-[100vh] [min-height:100lvh]  /* cover under iOS toolbar */
         bg-black/50 backdrop-blur-sm
-        pb-[env(safe-area-inset-bottom)]
-        pt-[env(safe-area-inset-top)]
         flex items-center justify-center
       "
+            //       className="
+            //   fixed left-0 top-0 z-[100]
+            //   w-screen h-dvh
+            //   p-4
+            //   bg-black/50 backdrop-blur-sm
+            //   pb-[env(safe-area-inset-bottom)]
+            //   pt-[env(safe-area-inset-top)]
+            //   flex items-center justify-center
+            // "
             aria-modal="true"
             role="dialog"
             aria-labelledby="modal-title"
