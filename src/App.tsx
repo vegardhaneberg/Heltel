@@ -16,7 +16,7 @@ function App() {
                 <Sparkles className="w-4 h-4 text-white -rotate-12" />
               </div>
               <h1 className='[font-family:"Cooper Hewitt",serif] text-3xl sm:text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent'>
-                <span className="block sm:hidden">Heltel</span>
+                <span className="block sm:hidden">Helene Tellefsen</span>
                 <span className="hidden sm:block">Helene Maria Tellefsen</span>
               </h1>
             </div>
