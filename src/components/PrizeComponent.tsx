@@ -43,7 +43,6 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
 
     const scrollY = window.scrollY;
     const body = document.body;
-    const root = document.documentElement;
 
     // lock scroll
     body.style.overflow = "hidden";
@@ -63,17 +62,9 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
     // Your backdrop is bg-black/50 => use #000000 for a convincing match.
     metaTheme.setAttribute("content", "#000000");
 
-    // Optional: also darken html/body so the bounce/overscroll looks right
-    const prevBodyBg = body.style.backgroundColor;
-    const prevRootBg = root.style.backgroundColor;
-    body.style.backgroundColor = "black";
-    root.style.backgroundColor = "black";
-
     return () => {
       body.style.overflow = "";
       metaTheme.setAttribute("content", prevTheme ?? "#ffffff");
-      body.style.backgroundColor = prevBodyBg;
-      root.style.backgroundColor = prevRootBg;
       window.scrollTo(0, scrollY);
     };
   }, [isModalOpen]);
@@ -151,7 +142,8 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
                     h-[100dvh] w-[100vw]
                     bg-black/50 backdrop-blur-sm
                     flex items-center justify-center
-                    touch-none"
+                    touch-none
+                    before:content-[''] before:fixed before:inset-x-0 before:bottom-0 before:h-[env(safe-area-inset-bottom)] before:bg-black/50 before:backdrop-blur-sm before:pointer-events-none"
             aria-modal="true"
             role="dialog"
             aria-labelledby="modal-title"
