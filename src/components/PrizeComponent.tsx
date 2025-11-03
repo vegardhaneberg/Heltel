@@ -142,13 +142,21 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
                     h-[100dvh] w-[100vw]
                     bg-black/50 backdrop-blur-sm
                     flex items-center justify-center
-                    touch-none
-                    before:content-[''] before:fixed before:inset-x-0 before:bottom-0 before:h-[env(safe-area-inset-bottom)] before:bg-black/50 before:backdrop-blur-sm before:pointer-events-none"
+                    touch-none"
             aria-modal="true"
             role="dialog"
             aria-labelledby="modal-title"
             aria-describedby="modal-description"
           >
+            {/* iOS bottom toolbar extender for backdrop */}
+            <div
+              className="fixed left-0 right-0 pointer-events-none bg-black/50 backdrop-blur-sm"
+              style={{
+                bottom: "calc(-1 * env(safe-area-inset-bottom))",
+                height: "env(safe-area-inset-bottom)",
+                zIndex: 99,
+              }}
+            />
             <div
               ref={panelRef}
               className="
