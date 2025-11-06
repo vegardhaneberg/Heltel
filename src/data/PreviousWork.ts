@@ -38,11 +38,21 @@ export const WorkTimeLine: Work[] = [
   },
   {
     year: 2025,
-    title: "NRK Newton - hvem har bæsja?",
+    title: "NRK Newton - Hvem har bæsja?",
     description:
       "I denne artige Newton-episoden medvirker Helene som bæsje-ekspert når hun og programleder Viljar utforsker ulike dyr sin avføring! Liten advarsel: ikke se mens du spiser middag, men se hvis du vil ha en god latter 😈",
     type: "TV",
     link: "https://tv.nrk.no/serie/newton/sesong/2025/episode/DMPP21501225",
+    color: "bg-gradient-to-br from-[#608a5a] to-[#df698c]",
+    prizes: undefined,
+  },
+  {
+    year: 2025,
+    title: "NRK Newton - Kaste eller sy om?",
+    description:
+      "Gjenbruk av klær er på dagsorden i denne Newton-episoden hvor programleder Viljar utfordres til å sy om en gammel slitt genser til nye nytt og fresht. Helene ledet arbeidet med denne episoden fra start til slutt, inkl. regissering, manus, og booking av lokaler.",
+    type: "TV",
+    link: "https://tv.nrk.no/serie/newton/sesong/2025/episode/DMPP21501525",
     color: "bg-gradient-to-br from-[#608a5a] to-[#df698c]",
     prizes: undefined,
   },

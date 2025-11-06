@@ -25,7 +25,7 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
 
   const panelRef = useRef<HTMLDivElement | null>(null);
 
-  // Close the modal when cliked outside
+  // Close the modal when click outside
   useEffect(() => {
     if (!isModalOpen) return;
     const onClick = (e: MouseEvent) => {
@@ -43,11 +43,7 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
 
     const scrollY = window.scrollY;
     const body = document.body;
-
-    // lock scroll
     body.style.overflow = "hidden";
-
-    // --- NEW: match Safari toolbar to backdrop ---
     const metaTheme =
       document.querySelector<HTMLMetaElement>('meta[name="theme-color"]') ??
       (() => {
@@ -58,8 +54,6 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
       })();
 
     const prevTheme = metaTheme.getAttribute("content");
-    // iOS Safari ignores alpha here; pick a solid close to your overlay.
-    // Your backdrop is bg-black/50 => use #000000 for a convincing match.
     metaTheme.setAttribute("content", "#000000");
 
     return () => {
