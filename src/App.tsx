@@ -1,23 +1,27 @@
 import { Sparkles, ExternalLink, Facebook, Instagram } from "lucide-react";
-import { WorkTimeLine } from "./data/PreviousWork";
+import { getWorkItemColor, WorkTimeLine } from "./data/PreviousWork";
 import PrizeComponent from "./components/PrizeComponent";
 import ScrollArrow from "./components/ScrollArrow/ScrollArrow";
+import StarAnimation from "./components/StarAnimation/StarAnimation";
 
 function App() {
   return (
-    <div className="min-h-[100dvh] bg-gradient-to-br from-purple-400 via-pink-400 to-yellow-300">
+    <div className="min-h-[100dvh] bg-gradient-to-br from-green-100 via-emerald-200 to-green-400">
       {/* Header */}
-      <header className="bg-white/90 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+      <header className="bg-gradient-to-br from-slate-600 via-emerald-700 to-slate-600 backdrop-blur-sm shadow-lg sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="bg-gradient-to-br from-purple-400 to-pink-500 p-3 rounded-full transform rotate-12">
-                <Sparkles className="w-4 h-4 text-white -rotate-12" />
-              </div>
-              <h1 className='[font-family:"Cooper Hewitt",serif] text-3xl sm:text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent'>
+              <h1 className='[font-family:"Cooper Hewitt",serif] text-3xl sm:text-3xl font-bold text-white bg-clip-text text-transparent'>
                 <span className="block sm:hidden">Helene Tellefsen</span>
                 <span className="hidden sm:block">Helene Maria Tellefsen</span>
               </h1>
+              <div className="block sm:hidden">
+                <StarAnimation stars={3} />
+              </div>
+              <div className="hidden sm:block">
+                <StarAnimation stars={10} />
+              </div>
             </div>
           </div>
         </div>
@@ -36,7 +40,7 @@ function App() {
                   alt="Helene Maria Tellefsen"
                   className="w-full h-[330px] sm:h-[400px] lg:h-[500px] object-cover rounded-2xl"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-gradient-to-br from-purple-400 to-pink-400 p-4 rounded-full shadow-xl">
+                <div className="absolute -bottom-4 -right-4 bg-gradient-to-br from-slate-800 via-emerald-800 to-slate-900 p-4 rounded-full shadow-xl">
                   <Sparkles className="w-8 h-8 text-white" />
                 </div>
               </div>
@@ -46,19 +50,19 @@ function App() {
           {/* Description */}
           <div className="order-1 md:order-2 space-y-6">
             <div className="inline-block">
-              <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg transform -rotate-2 inline-block">
+              <span className="bg-gradient-to-br from-slate-800 via-emerald-800 to-slate-900 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg transform -rotate-2 inline-block">
                 Så hyggelig at du titter innom! 👋
               </span>
             </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight">
               Helene Maria Tellefsen{" "}
-              <span className="bg-gradient-to-r from-yellow-300 to-orange-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-br from-slate-800 via-emerald-800 to-slate-900 bg-clip-text text-transparent">
                 AKA{" "}
               </span>
               Heltel
             </h2>
-            <p className="text-lg sm:text-xl text-white/90 leading-relaxed">
-              💛-lig velkommen til denne samlesiden av Helene sitt arbeid, en
+            <p className="text-lg sm:text-xl leading-relaxed">
+              💚-lig velkommen til denne samlesiden av Helene sitt arbeid, en
               nettside laget av Helenes fanskare. Her samler vi alt gullet denne
               livlige jenta produserer.
             </p>
@@ -117,11 +121,11 @@ function App() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20">
           <div className="text-center mb-12">
-            <h3 className='[font-family:"Cooper Hewitt",serif] text-3xl sm:text-4xl font-black text-white'>
+            <h3 className='[font-family:"Cooper Hewitt",serif] text-3xl sm:text-4xl font-black'>
               Heltel sitt arbeid
             </h3>
             <div className="flex justify-center items-center">
-              <p className='[font-family:"Cooper Hewitt",serif] text-sm sm:text-xl text-white/70'>
+              <p className='[font-family:"Cooper Hewitt",serif] text-sm sm:text-xl'>
                 Klikk på boksene under
               </p>
               <img
@@ -146,7 +150,9 @@ function App() {
                     className="block sm:hidden"
                   >
                     <div
-                      className={`${item.color} rounded-xl p-4 sm:p-6 shadow-lg flex-shrink-0 self-center flex flex-col items-center`}
+                      className={`${getWorkItemColor(
+                        item.type
+                      )} rounded-xl p-4 sm:p-6 shadow-lg flex-shrink-0 self-center flex flex-col items-center`}
                     >
                       <div className="text-2xl font-black text-white">
                         {item.year}
@@ -184,7 +190,9 @@ function App() {
               <div className="hidden sm:block bg-white/25 backdrop-blur-sm rounded-2xl shadow-xl p-6 sm:p-8 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl">
                 <div className="flex flex-col items-center sm:flex-row sm:items-center gap-4 sm:gap-6">
                   <div
-                    className={`${item.color} rounded-xl p-4 sm:p-6 shadow-lg flex-shrink-0 self-center flex flex-col items-center`}
+                    className={`${getWorkItemColor(
+                      item.type
+                    )} rounded-xl p-4 sm:p-6 shadow-lg flex-shrink-0 self-center flex flex-col items-center`}
                   >
                     <div className="text-2xl sm:text-3xl font-black text-white">
                       {item.year}
@@ -223,7 +231,7 @@ function App() {
           <p className="text-gray-600">
             Viktig å presisere at denne nettsiden er laget helt uavhengig av
             Heltel.
-            <span className="font-bold text-transparent bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text">
+            <span className="font-bold text-transparent bg-gradient-to-br from-slate-800 via-emerald-800 to-slate-900 bg-clip-text">
               {" "}
               Hun ville aldri godkjent en slik skryteside!
             </span>

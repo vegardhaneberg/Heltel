@@ -15,15 +15,25 @@ export interface Prize {
   link: string;
 }
 
+export function getWorkItemColor(type: string): string {
+  if (type === "TV")
+    return "bg-gradient-to-br from-slate-800 via-emerald-800 to-slate-900";
+  if (type === "Radio") return "bg-gradient-to-br from-emerald-700 to-black";
+  if (type === "Revy")
+    return "bg-gradient-to-br from-emerald-700 via-teal-700 to-green-900";
+  console.error("Unexpected work item type. Using default 'TV' styling");
+  return "bg-gradient-to-br from-slate-800 via-emerald-800 to-slate-900";
+}
+
 export const WorkTimeLine: Work[] = [
   {
     year: 2025,
     title: "NRK Supernytt",
     description:
       "Like før startskudded for VM i friidrett gikk av stablen i 2025 lagde Helene en reportasje om norges medaljekandidater. Her får vi et informerende og morsomt møte med våre 🌟-er til det kommende mesterskapet i Tokyo 🇯🇵",
-    type: "TV for barn",
+    type: "TV",
     link: "https://tv.nrk.no/serie/supernytt/sesong/202509/episode/MSUM02091225",
-    color: "bg-gradient-to-br from-[#608a5a] to-[#df698c]",
+    color: "bg-gradient-to-br from-emerald-600 via-emerald-700 to-green-800",
     prizes: undefined,
   },
   {
@@ -33,7 +43,7 @@ export const WorkTimeLine: Work[] = [
       "Stjernene på himmelen er ganske faktastiske✨ Dette formidler Helene både pedagogisk og underholdende i denne episoden av Newton. Her får deltakerne også bryne seg på en stjernebilde-challenge i eposiden hvor Helene har vært manusforfatter, produsent og medvirkende.",
     type: "TV",
     link: "https://tv.nrk.no/serie/newton/sesong/2025/episode/DMPP21501625",
-    color: "bg-gradient-to-br from-[#608a5a] to-[#df698c]",
+    color: "bg-gradient-to-br from-emerald-700 via-teal-700 to-green-900",
     prizes: undefined,
   },
   {
@@ -43,7 +53,7 @@ export const WorkTimeLine: Work[] = [
       "I denne artige Newton-episoden medvirker Helene som bæsje-ekspert når hun og programleder Viljar utforsker ulike dyr sin avføring! Liten advarsel: ikke se mens du spiser middag, men se hvis du vil ha en god latter 😈",
     type: "TV",
     link: "https://tv.nrk.no/serie/newton/sesong/2025/episode/DMPP21501225",
-    color: "bg-gradient-to-br from-[#608a5a] to-[#df698c]",
+    color: "bg-gradient-to-br from-slate-800 via-emerald-800 to-slate-900",
     prizes: undefined,
   },
   {
@@ -53,7 +63,7 @@ export const WorkTimeLine: Work[] = [
       "Gjenbruk av klær er på dagsorden i denne Newton-episoden hvor programleder Viljar utfordres til å sy om en gammel slitt genser til nye nytt og fresht. Helene ledet arbeidet med denne episoden fra start til slutt, inkl. regissering, manus, og booking av lokaler.",
     type: "TV",
     link: "https://tv.nrk.no/serie/newton/sesong/2025/episode/DMPP21501525",
-    color: "bg-gradient-to-br from-[#608a5a] to-[#df698c]",
+    color: "bg-gradient-to-br from-green-700 via-green-800 to-green-900",
     prizes: undefined,
   },
   {
@@ -63,7 +73,7 @@ export const WorkTimeLine: Work[] = [
       "Radioprogram for Voldas Studentradio hvor Helene sjekker av alt hun hadde på bucketlisten sin under studietiden i Volda. Bli med når Helene prøver seg som søppeltømmer, detektiv og stifter et nært vennskap med 4 pensjonister fra Ørsta. Eposodene er også publisert på Spotify og Apple Podcast.",
     type: "Radio",
     link: "https://open.spotify.com/show/371wEolsdbDibF50jEln7W",
-    color: "bg-gradient-to-br from-[#608a5a] to-[#df698c]",
+    color: "bg-gradient-to-br from-emerald-600 via-indigo-700 to-indigo-900",
     prizes: [
       {
         date: "24. Nov 2023",
@@ -88,7 +98,7 @@ export const WorkTimeLine: Work[] = [
       "Ville du enten tilbrakt 6 mnd på tur med Lars Monsen til Canada, eller syklet fra Nordkapp til Sør-Kapp med Dag Otto Lauritzen og Sophie - Elise? Dette er bare ett av mange dilemmaer vi tar opp dette radioprogrammet. En ting er i hvert fall sikkert, du trenger mest sannsynlig aldri å ta hensyn til noe av det vi snakker om, men vi tar det på fult alvor likevel.",
     type: "Radio",
     link: "https://open.spotify.com/show/3zvH9gBm9JbRtAsZvYrgaY",
-    color: "bg-gradient-to-br from-[#608a5a] to-[#df698c]",
+    color: "bg-gradient-to-br from-emerald-700 to-black",
     prizes: [
       {
         date: "2. Des 2022",

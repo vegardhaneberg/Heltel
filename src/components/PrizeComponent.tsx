@@ -74,7 +74,7 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
       {prizes && (
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="flex items-center justify-center gap-2 text-sm font-semibold text-purple-600 hover:text-purple-700 transition-colors w-full"
+          className="flex items-center justify-center gap-2 text-sm font-semibold hover:text-purple-700 transition-colors w-full"
         >
           <Trophy className="w-4 h-4" />
           <span>
@@ -117,7 +117,7 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
                 }}
                 className="flex justify-center items-center gap-3 bg-white/30 p-3 rounded-lg cursor-pointer hover:bg-white/40 focus:outline-none focus:ring-2 focus:ring-purple-500/60 transition-colors w-full min-w-[280px] sm:min-w-[400px] max-w-lg"
               >
-                <Trophy className="w-5 h-5 text-yellow-600" />
+                <Trophy className="w-5 h-5" />
                 <span className="text-gray-700 font-medium text-center">
                   {prize.title}
                 </span>
@@ -163,7 +163,7 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
               <div className="p-6 sm:p-8">
                 <div className="flex items-start justify-between gap-6">
                   <div className="flex items-center gap-3">
-                    <div className="bg-gradient-to-br from-purple-400 to-pink-400 p-2 rounded-full shadow">
+                    <div className="bg-gradient-to-br from-emerald-700 via-teal-700 to-green-900 p-2 rounded-full shadow">
                       <Trophy className="w-5 h-5 text-white" />
                     </div>
                     <h3
@@ -175,7 +175,7 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
                   </div>
                   <button
                     onClick={() => setIsModalOpen(false)}
-                    className="rounded-full p-2 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500/60"
+                    className="rounded-full p-2 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500/60"
                     aria-label="Lukk"
                     autoFocus
                   >
@@ -194,7 +194,7 @@ const PrizeComponent: React.FC<PrizeComponentProps> = ({ title, prizes }) => {
                 <div className="mt-6 flex justify-end">
                   <button
                     onClick={() => setIsModalOpen(false)}
-                    className="inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-400 to-pink-400 px-4 py-2 text-sm font-semibold text-white shadow hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-purple-500/60"
+                    className="inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-emerald-700 via-teal-700 to-green-900 px-4 py-2 text-sm font-semibold text-white shadow hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-purple-500/60"
                   >
                     Lukk
                   </button>

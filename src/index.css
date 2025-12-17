@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@theme {
+  --animate-twinkle: twinkle 1s ease-in-out infinite;
+
+  @keyframes twinkle {
+    0%,
+    100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}
